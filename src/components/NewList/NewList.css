@@ -31,7 +31,7 @@
 }
 
 
-@media(max-width:360px){
+@media(max-width:500px){
   .user-list__btn{
   position: absolute;
   right: 2rem;
