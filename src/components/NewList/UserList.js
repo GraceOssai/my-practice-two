@@ -37,7 +37,7 @@ const UserList = (props) => {
     <form onSubmit={submitFormHandler}>
       <div className='user-list'>
           <div className='user-list__control'>
-            <label>title</label>
+            <label>Title</label>
             <input type="text"
             onChange={enteredTitleHandler}
             value={enteredTitle} 
