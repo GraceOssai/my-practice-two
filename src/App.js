@@ -1,11 +1,10 @@
+import { useState } from 'react';
 import './App.css';
 import List from './components/List/List';
 import NewList from './components/NewList/NewList';
 
 
-
-function App() {
-  const listItems = [
+const DUMMY_LISTITEMS = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -31,9 +30,18 @@ function App() {
     },
   ];
 
+function App() {
+
+  const [listItems, setListItems] = useState(DUMMY_LISTITEMS)
+
+  const addUserDataHandler = (listItem) => {
+    setListItems((prevListItem) => {
+      return [...prevListItem, listItem ]
+    })
+  }
   return (
     <div className="App">
-      <NewList/>
+      <NewList onAddUserData={addUserDataHandler}/>
       <List item={listItems}/>
     </div>
   );

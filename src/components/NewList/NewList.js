@@ -2,10 +2,18 @@ import React from 'react'
 import './NewList.css'
 import UserList from './UserList'
 
-const NewList = () => {
+const NewList = (props) => {
+  const saveUserDataHandler = (enteredUserData) => {
+    const userData = {
+      ...enteredUserData,
+      id : Math.random().toString()
+    }
+    props.onAddUserData(userData)
+  }
+
   return (
     <div className='new-list'>
-      <UserList/>
+      <UserList onSaveUserData={saveUserDataHandler}/>
     </div>
   )
 }
